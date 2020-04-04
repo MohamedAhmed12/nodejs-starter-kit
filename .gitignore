@@ -3,3 +3,5 @@ logs
 # Dependency directories
 node_modules/
 jspm_packages/
+#zeit .now
+.now
