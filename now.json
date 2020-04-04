@@ -1,12 +1,13 @@
 {
   "version": 2,
   "public": true,
-  "builds": [{ "src": "./src/index.html", "use": "@now/node-server" }],
+  "builds": [
+    { "src": "buildScripts/srcServer.js", "use": "@now/node-server" },
+    { "src": "/src/**", "use": "@now/static" }
+  ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "./src/index.html",
-      "methods": ["GET"]
-    }
+    { "src": "/", "dest": "/src/index.html" },
+    { "src": "/(.+js|.+css|.+png|.+ico|robots.txt)", "dest": "/src/$1" },
+    { "src": "/api", "dest": "buildScripts/srcServer.js" }
   ]
 }
