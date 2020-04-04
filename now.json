@@ -1,11 +1,11 @@
 {
   "version": 2,
   "public": true,
-  "builds": [{ "src": "src/index.js", "use": "@now/node-server" }],
+  "builds": [{ "src": "./src/index.html", "use": "@now/node-server" }],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "./src/index.js",
+      "dest": "./src/index.html",
       "methods": ["GET"]
     }
   ]
